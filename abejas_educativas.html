@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abejas educativas</title>
+    <link rel="stylesheet" href="abejas_educativas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="abejas_educativas.js" defer></script>
+</head>
+<body>
+    <!-------------------------------------->
+    <!--|estructuracion_abejas_educativas|-->
+    <!-------------------------------------->
+    <main class="app">
+        <!-- PORTADA: dibujo de una abeja, título y descripción -->
+        <header class="portada">
+            <svg class="abeja" viewBox="0 0 120 90" role="img" aria-label="Dibujo de una abeja">
+                <!-- El clipPath recorta las rayas para que queden dentro del cuerpo -->
+                <clipPath id="cuerpo"><ellipse cx="60" cy="52" rx="34" ry="22"/></clipPath>
+                <!-- Alas -->
+                <ellipse cx="52" cy="28" rx="18" ry="11" fill="#bfe3f5" opacity="0.8" transform="rotate(-20 52 28)"/>
+                <ellipse cx="74" cy="28" rx="18" ry="11" fill="#bfe3f5" opacity="0.8" transform="rotate(15 74 28)"/>
+                <!-- Cuerpo con rayas -->
+                <ellipse cx="60" cy="52" rx="34" ry="22" fill="#f2b705"/>
+                <rect x="48" y="30" width="9" height="44" fill="#2b2111" clip-path="url(#cuerpo)"/>
+                <rect x="68" y="30" width="9" height="44" fill="#2b2111" clip-path="url(#cuerpo)"/>
+                <!-- Aguijón, cabeza y ojo -->
+                <polygon points="93,48 106,52 93,56" fill="#2b2111"/>
+                <circle cx="28" cy="52" r="14" fill="#2b2111"/>
+                <circle cx="23" cy="49" r="3" fill="#fff"/>
+            </svg>
+            <h1>Abejas Educativas</h1>
+            <p>Conoce a las abejas y descubre por qué son tan importantes.</p>
+        </header>
+        <!-- SECCIÓN 1: la colmena -->
+        <section class="panel">
+            <h2>La colmena</h2>
+            <div class="tarjetas">
+                <article class="tarjeta"><h3>Reina</h3><p>Hay una sola por colmena y puede poner hasta 2.000 huevos al día.</p></article>
+                <article class="tarjeta"><h3>Obreras</h3><p>Son hembras. Recolectan néctar, fabrican miel y cuidan a las crías.</p></article>
+                <article class="tarjeta"><h3>Zánganos</h3><p>Son machos. Su función principal es aparearse con la reina.</p></article>
+            </div>
+        </section>
+        <!-- SECCIÓN 2: por qué son importantes -->
+        <section class="panel">
+            <h2>¿Por qué son importantes?</h2>
+            <p>
+                Al pasar de flor en flor, las abejas transportan el polen y permiten que
+                las plantas den frutos y semillas. Este proceso se llama polinización y
+                de él depende gran parte de las frutas y verduras que comemos.
+            </p>
+        </section>
+        <!-- SECCIÓN 3: cómo ayudar (data-ayuda identifica cada casilla al guardar) -->
+        <section class="panel">
+            <h2>¿Cómo ayudarlas?</h2>
+            <label class="ayuda"><input type="checkbox" data-ayuda="flores"> Sembrar flores en un jardín o balcón</label>
+            <label class="ayuda"><input type="checkbox" data-ayuda="pesticidas"> Evitar los pesticidas en las plantas</label>
+            <label class="ayuda"><input type="checkbox" data-ayuda="agua"> Dejar un recipiente con agua y piedras</label>
+            <label class="ayuda"><input type="checkbox" data-ayuda="miel"> Comprar miel a apicultores locales</label>
+            <p id="progresoAyuda" class="progreso"></p>
+        </section>
+        <!-- SECCIÓN 4: mini quiz (JavaScript crea las preguntas dentro de #quiz) -->
+        <section class="panel">
+            <h2>Pon a prueba lo aprendido</h2>
+            <div id="quiz"></div>
+            <p id="mensaje" class="mensaje" role="alert"></p>
+            <div class="botones">
+                <button id="btnRevisar" class="boton" type="button">Revisar respuestas</button>
+                <button id="btnReiniciar" class="boton-claro" type="button">Reiniciar</button>
+            </div>
+        </section>
+        <!-- SECCIÓN 5: notas personales -->
+        <section class="panel">
+            <h2>Mis notas</h2>
+            <textarea id="nota" rows="3" placeholder="¿Qué fue lo que más te sorprendió?"></textarea>
+        </section>
+    </main>
+</body>
+</html>

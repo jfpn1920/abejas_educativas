@@ -1,0 +1,160 @@
+/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
+:root {
+    --fondo: #fbf4de;          /* fondo de la página */
+    --panel: #ffffff;          /* fondo de las tarjetas */
+    --texto: #2b2111;          /* color principal del texto */
+    --texto-suave: #6f6446;    /* textos secundarios */
+    --borde: #e8dcb5;          /* color de los bordes */
+    --miel: #f2b705;           /* amarillo miel */
+    --miel-oscura: #8a5d00;    /* ocre oscuro: títulos y botones */
+    --ok: #2e7d4f;             /* verde: respuesta correcta */
+    --error: #b3261e;          /* rojo: respuesta incorrecta */
+}
+/* ===== REINICIO BÁSICO ===== */
+* {
+    box-sizing: border-box;    /* el padding no agranda los elementos */
+    margin: 0;
+    padding: 0;
+}
+/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    padding: 24px 16px;
+}
+/* Contenedor central con ancho máximo */
+.app {
+    max-width: 680px;
+    margin: 0 auto;
+}
+/* ===== PORTADA ===== */
+.portada {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.abeja {
+    width: 140px;
+    height: auto;
+}
+.portada h1 {
+    font-size: 2.2rem;
+    color: var(--miel-oscura);
+}
+.portada p {
+    color: var(--texto-suave);
+}
+/* ===== PANELES ===== */
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-top: 5px solid var(--miel);   /* franja amarilla arriba */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+.panel h2 {
+    font-size: 1.3rem;
+    color: var(--miel-oscura);
+    margin-bottom: 10px;
+}
+/* ===== TARJETAS DE LA COLMENA ===== */
+.tarjetas {
+    display: grid;
+    /* columnas automáticas: se acomodan según el ancho disponible */
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+}  
+.tarjeta {
+    background: var(--fondo);
+    border-radius: 8px;
+    padding: 12px;
+}
+.tarjeta h3 {
+    font-size: 1.05rem;
+}
+.tarjeta p {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+/* ===== LISTA DE AYUDAS ===== */
+.ayuda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--borde);
+    cursor: pointer;
+}
+.progreso {
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--miel-oscura);
+}
+/* ===== QUIZ ===== */
+fieldset {
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+legend {
+    font-weight: bold;
+    padding: 0 6px;
+}
+.opcion {
+    display: block;
+    padding: 4px 0;
+    cursor: pointer;
+}
+/* Colores al revisar: la clase la agrega JavaScript */
+fieldset.correcta { border-color: var(--ok); background: #eef8f1; }
+fieldset.incorrecta { border-color: var(--error); background: #fdf0ee; }
+.respuesta {
+    font-size: 0.9rem;
+    color: var(--error);
+    margin-top: 4px;
+}
+.mensaje {
+    min-height: 1.4em;         /* evita que el diseño salte al aparecer */
+    font-weight: bold;
+    color: var(--miel-oscura);
+    margin-bottom: 8px;
+}
+/* ===== BOTONES ===== */
+.botones {
+    display: flex;
+    gap: 10px;
+}
+.boton,
+.boton-claro {
+    flex: 1;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.boton {
+    background: var(--miel-oscura);
+    color: #fff;
+    border: none;
+}
+.boton-claro {
+    background: none;
+    color: var(--miel-oscura);
+    border: 1px solid var(--miel-oscura);
+}
+/* ===== NOTAS ===== */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+textarea:focus {
+    outline: 2px solid var(--miel);
+}

@@ -1,22 +1,19 @@
-/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
-:root {
-    --fondo: #fbf4de;          /* fondo de la página */
-    --panel: #ffffff;          /* fondo de las tarjetas */
-    --texto: #2b2111;          /* color principal del texto */
-    --texto-suave: #6f6446;    /* textos secundarios */
-    --borde: #e8dcb5;          /* color de los bordes */
-    --miel: #f2b705;           /* amarillo miel */
-    --miel-oscura: #8a5d00;    /* ocre oscuro: títulos y botones */
-    --ok: #2e7d4f;             /* verde: respuesta correcta */
-    --error: #b3261e;          /* rojo: respuesta incorrecta */
-}
-/* ===== REINICIO BÁSICO ===== */
 * {
-    box-sizing: border-box;    /* el padding no agranda los elementos */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+:root {
+    --fondo: #fbf4de;
+    --panel: #ffffff;
+    --texto: #2b2111;
+    --texto-suave: #6f6446;
+    --borde: #e8dcb5;
+    --miel: #f2b705;
+    --miel-oscura: #8a5d00;
+    --ok: #2e7d4f;
+    --error: #b3261e;
+}
 body {
     font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     background: var(--fondo);
@@ -24,12 +21,13 @@ body {
     line-height: 1.6;
     padding: 24px 16px;
 }
-/* Contenedor central con ancho máximo */
+/*------------------------------*/
+/*--|estilo_abejas_educativas|--*/
+/*------------------------------*/
 .app {
     max-width: 680px;
     margin: 0 auto;
 }
-/* ===== PORTADA ===== */
 .portada {
     text-align: center;
     margin-bottom: 24px;
@@ -45,11 +43,13 @@ body {
 .portada p {
     color: var(--texto-suave);
 }
-/* ===== PANELES ===== */
+/*--------------------*/
+/*--|estilo_paneles|--*/
+/*--------------------*/
 .panel {
     background: var(--panel);
     border: 1px solid var(--borde);
-    border-top: 5px solid var(--miel);   /* franja amarilla arriba */
+    border-top: 5px solid var(--miel);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 16px;
@@ -59,13 +59,14 @@ body {
     color: var(--miel-oscura);
     margin-bottom: 10px;
 }
-/* ===== TARJETAS DE LA COLMENA ===== */
+/*--------------------*/
+/*--|estilo_colmena|--*/
+/*--------------------*/
 .tarjetas {
     display: grid;
-    /* columnas automáticas: se acomodan según el ancho disponible */
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: 12px;
-}  
+}
 .tarjeta {
     background: var(--fondo);
     border-radius: 8px;
@@ -78,7 +79,9 @@ body {
     font-size: 0.9rem;
     color: var(--texto-suave);
 }
-/* ===== LISTA DE AYUDAS ===== */
+/*-------------------*/
+/*--|estilo_ayudas|--*/
+/*-------------------*/
 .ayuda {
     display: flex;
     align-items: center;
@@ -92,7 +95,9 @@ body {
     font-weight: bold;
     color: var(--miel-oscura);
 }
-/* ===== QUIZ ===== */
+/*-----------------*/
+/*--|estilo_quiz|--*/
+/*-----------------*/
 fieldset {
     border: 1px solid var(--borde);
     border-radius: 8px;
@@ -108,21 +113,28 @@ legend {
     padding: 4px 0;
     cursor: pointer;
 }
-/* Colores al revisar: la clase la agrega JavaScript */
-fieldset.correcta { border-color: var(--ok); background: #eef8f1; }
-fieldset.incorrecta { border-color: var(--error); background: #fdf0ee; }
+fieldset.correcta {
+    border-color: var(--ok);
+    background: #eef8f1;
+}
+fieldset.incorrecta {
+    border-color: var(--error);
+    background: #fdf0ee;
+}
 .respuesta {
     font-size: 0.9rem;
     color: var(--error);
     margin-top: 4px;
 }
 .mensaje {
-    min-height: 1.4em;         /* evita que el diseño salte al aparecer */
+    min-height: 1.4em;
     font-weight: bold;
     color: var(--miel-oscura);
     margin-bottom: 8px;
 }
-/* ===== BOTONES ===== */
+/*--------------------*/
+/*--|estilo_botones|--*/
+/*--------------------*/
 .botones {
     display: flex;
     gap: 10px;
@@ -145,7 +157,9 @@ fieldset.incorrecta { border-color: var(--error); background: #fdf0ee; }
     color: var(--miel-oscura);
     border: 1px solid var(--miel-oscura);
 }
-/* ===== NOTAS ===== */
+/*------------------*/
+/*--|estilo_notas|--*/
+/*------------------*/
 textarea {
     width: 100%;
     padding: 10px;
